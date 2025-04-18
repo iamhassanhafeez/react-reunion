@@ -18,4 +18,4 @@ const newMessage = myMessage.trim()
 // trim removes all spaces from beginning and end
 //console.log(newMessage);
 console.log(newMessage.replace('\'ll', '-'));
-
+ 
