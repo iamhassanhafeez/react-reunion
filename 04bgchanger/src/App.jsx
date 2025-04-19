@@ -48,7 +48,7 @@ function App() {
         className={`w-full h-screen duration-200 ${color} flex justify-center items-center`}
       >
         <h1 className="text-white text-2xl font-bold">
-          This is area that will chnage bg dynamically.
+          This is area that will change bg dynamically.
         </h1>
       </div>
       <div className="flex flex-wrap justify-center w-full">
