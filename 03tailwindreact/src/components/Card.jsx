@@ -1,7 +1,7 @@
 import React from "react";
 
 function Card(props) {
-  console.log("Props", props);
+  console.log("Props", props.dev);
 
   return (
     <div className=" w-72 flex flex-col rounded-xl glass  min-h-72 mt-3 ">
