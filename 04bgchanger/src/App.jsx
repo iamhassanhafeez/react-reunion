@@ -3,6 +3,44 @@ import Button from "./components/Button";
 
 function App() {
   const [color, setColor] = useState("green-400");
+  const colorData = [
+    {
+      colorName: "green",
+      colorVal: "green-400",
+    },
+    {
+      colorName: "emerald",
+      colorVal: "emerald-400",
+    },
+    {
+      colorName: "teal",
+      colorVal: "teal-400",
+    },
+    {
+      colorName: "cyan",
+      colorVal: "cyan-400",
+    },
+    {
+      colorName: "sky",
+      colorVal: "sky-400",
+    },
+    {
+      colorName: "indigo",
+      colorVal: "indigo-400",
+    },
+    {
+      colorName: "purple",
+      colorVal: "purple-400",
+    },
+    {
+      colorName: "fuchsia",
+      colorVal: "fuchsia-400",
+    },
+    {
+      colorName: "pink",
+      colorVal: "pink-400",
+    },
+  ];
 
   return (
     <>
