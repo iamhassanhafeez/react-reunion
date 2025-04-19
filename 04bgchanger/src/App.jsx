@@ -2,49 +2,49 @@ import { useState } from "react";
 import Button from "./components/Button";
 
 function App() {
-  const [color, setColor] = useState("green-400");
+  const [color, setColor] = useState("bg-slate-400");
   const colorData = [
     {
       colorName: "green",
-      colorVal: "green-400",
+      colorVal: "bg-green-400",
     },
     {
       colorName: "emerald",
-      colorVal: "emerald-400",
+      colorVal: "bg-emerald-400",
     },
     {
       colorName: "teal",
-      colorVal: "teal-400",
+      colorVal: "bg-teal-400",
     },
     {
       colorName: "cyan",
-      colorVal: "cyan-400",
+      colorVal: "bg-cyan-400",
     },
     {
       colorName: "sky",
-      colorVal: "sky-400",
+      colorVal: "bg-sky-400",
     },
     {
       colorName: "indigo",
-      colorVal: "indigo-400",
+      colorVal: "bg-indigo-400",
     },
     {
       colorName: "purple",
-      colorVal: "purple-400",
+      colorVal: "bg-purple-400",
     },
     {
       colorName: "fuchsia",
-      colorVal: "fuchsia-400",
+      colorVal: "bg-fuchsia-400",
     },
     {
       colorName: "pink",
-      colorVal: "pink-400",
+      colorVal: "bg-pink-400",
     },
   ];
 
   return (
     <>
-      <div className={`w-full h-screen duration-200 bg-${color}`}>
+      <div className={`w-full h-screen duration-200 ${color}`}>
         <h1 className="text-white text-2xl font-bold">
           This is area that will chnage bg dynamically.
         </h1>
