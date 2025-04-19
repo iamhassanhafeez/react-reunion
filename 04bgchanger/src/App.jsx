@@ -44,12 +44,21 @@ function App() {
 
   return (
     <>
-      <div className="w-full h-screen duration-200">
-        <h1>This is area that will chnage bg dynamically.</h1>
+      <div className={`w-full h-screen duration-200 bg-${color}`}>
+        <h1 className="text-white text-2xl font-bold">
+          This is area that will chnage bg dynamically.
+        </h1>
       </div>
       <div className="flex flex-wrap justify-center w-full">
         <div className="w-8/10 fixed bottom-20 flex flex-wrap p-10 gap-5 justify-center shadow-lg rounded-full bg-white">
-          <Button colorName={"Green"} colorVal={"emerald-400"} />
+          {colorData.map(({ colorName, colorVal }) => (
+            <Button
+              colorName={colorName}
+              colorValue={colorVal}
+              key={colorName}
+              onClick={() => setColor(colorVal)}
+            />
+          ))}
         </div>
       </div>
     </>
