@@ -1,25 +1,29 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 function App() {
-  const [length, setLength] = useState(8);
+  const [length, setLength] = useState("8");
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("demo");
 
-  const passwordGenerator = () => {
+  const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (numberAllowed) str += "0123456789";
     if (charAllowed) str += "!@#$%^&*()-_=+[]{}`~";
     for (let i = 1; i < length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
-      pass = str.charAt(char);
+      pass += str.charAt(char);
     }
 
     setPassword(pass);
-  };
+  }, [length, numberAllowed, charAllowed, setPassword]);
 
-  // useEffect(() => {});
+  useEffect(() => {
+    // const res = passwordGenerator();
+    // console.log(res);
+    passwordGenerator();
+  }, [length, numberAllowed, charAllowed, passwordGenerator]);
   return (
     <>
       <div className=" w-full h-screen flex flex-wrap justify-center items-center">
@@ -28,9 +32,10 @@ function App() {
             Password Generator
           </h1>
           <input
-            className="outline-none w-full py-1 px-3 bg-white rounded-full"
+            className="outline-none w-full py-1 px-3 bg-white rounded-full text-emerald-400"
             type="text"
             placeholder="Password"
+            value={password}
             readOnly
           />
           <button className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">
@@ -61,7 +66,14 @@ function App() {
               <label htmlFor="numberInput">Numbers</label>
             </div>
             <div className="flex items-center gap-x-1">
-              <input type="checkbox" id="characterInput" />
+              <input
+                type="checkbox"
+                id="characterInput"
+                defaultChecked={charAllowed}
+                onChange={() => {
+                  setCharAllowed((prev) => !prev);
+                }}
+              />
               <label htmlFor="characterInput">Characters</label>
             </div>
           </div>
