@@ -1,6 +1,10 @@
 import { useState } from "react";
 
 function App() {
+  const [length, setLength] = useState(8);
+  const [numberAllowed, setNumberAllowed] = useState(false);
+  const [charAllowed, setCharAllowed] = useState(false);
+  const [password, setPassword] = useState("");
   return (
     <>
       <div className=" w-full h-screen flex flex-wrap justify-center items-center">
