@@ -32,7 +32,14 @@ function App() {
               <label>Length: </label>
             </div>
             <div className="flex items-center gap-x-1">
-              <input type="checkbox" id="numberInput" />
+              <input
+                type="checkbox"
+                id="numberInput"
+                defaultChecked={numberAllowed}
+                onChange={() => {
+                  setNumberAllowed((prev) => !prev);
+                }}
+              />
               <label htmlFor="numberInput">Numbers</label>
             </div>
             <div className="flex items-center gap-x-1">
